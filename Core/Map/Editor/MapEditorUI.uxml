@@ -1,0 +1,24 @@
+<engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
+    <Style src="project://database/Assets/01_Work/HS/Core/Map/Editor/MapEditorUSS.uss?fileID=7433441132597879392&amp;guid=3d56e45ca08d7f243a8f568c7aea5a88&amp;type=3#MapEditorUSS" />
+    <engine:VisualElement name="ContentContainer" style="flex-grow: 0; height: 475px; border-top-left-radius: 20px; border-top-right-radius: 20px; border-bottom-right-radius: 20px; border-bottom-left-radius: 20px; border-top-width: 2px; border-right-width: 2px; border-bottom-width: 2px; border-left-width: 2px; border-left-color: rgb(115, 115, 115); border-right-color: rgb(115, 115, 115); border-top-color: rgb(115, 115, 115); border-bottom-color: rgb(115, 115, 115); flex-wrap: nowrap;">
+        <engine:Label text="커스텀 맵 에디터" name="TItle" style="align-self: center; -unity-font-style: bold; font-size: 25px; border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0; border-top-left-radius: 0; border-top-right-radius: 0; border-bottom-right-radius: 0; border-bottom-left-radius: 0; border-left-color: rgb(107, 107, 107); border-right-color: rgb(107, 107, 107); border-top-color: rgb(107, 107, 107); border-bottom-color: rgb(107, 107, 107); padding-right: 0; padding-left: 0; padding-bottom: 5px; padding-top: 10px;" />
+        <engine:VisualElement name="PrefabParent" style="flex-grow: 0; flex-shrink: 0; margin-top: 4px; margin-bottom: 15px; width: 370px; -unity-text-align: upper-left; align-items: auto; flex-basis: auto; height: 60px; align-self: center;">
+            <editor:ObjectField label="FertileGrass" name="GrassPrefabField" type="_01_Work.HS.Core.Map.Ground, Assembly-CSharp" binding-path="fertileGrassPrefab" class="map-prefab-field" />
+            <editor:ObjectField label="NormalGrass" name="GrassPrefabField" type="_01_Work.HS.Core.Map.Ground, Assembly-CSharp" binding-path="grassPrefab" class="map-prefab-field" />
+            <editor:ObjectField label="BarrenGrass" name="GrassPrefabField" type="_01_Work.HS.Core.Map.Ground, Assembly-CSharp" binding-path="barrenGrassPrefab" class="map-prefab-field" />
+        </engine:VisualElement>
+        <engine:VisualElement name="GrassPersent" style="flex-grow: 0; flex-shrink: 1; align-items: flex-start; justify-content: center; align-self: center; align-content: auto; height: 58px; flex-wrap: wrap; flex-direction: row; width: 381px; -unity-text-align: upper-left; margin-top: 12px; margin-bottom: 3px;">
+            <engine:IntegerField label="비옥한 땅 확률" value="30" name="GrassField0" binding-path="fertileGrassProbability" class="grass-field" />
+            <engine:IntegerField label="일반 땅 확률" value="40" name="GrassField1" binding-path="grassProbability" class="grass-field" />
+            <engine:IntegerField label="척박한 땅 확률" value="30" name="GrassField2" binding-path="barrenGrassProbability" class="grass-field" />
+        </engine:VisualElement>
+        <engine:VisualElement name="MapSize" style="flex-grow: 0; flex-shrink: 1; align-items: flex-start; justify-content: center; align-self: center; align-content: auto; height: 61px; flex-wrap: wrap; flex-direction: row; width: 369px; -unity-text-align: upper-left;">
+            <engine:IntegerField label="가로 사이즈" value="10" name="HorizontalField" binding-path="horizontalSize" class="grass-field" style="-unity-text-align: middle-center;" />
+            <engine:IntegerField label="세로 사이즈" value="10" name="VerticalField" binding-path="verticalSize" class="grass-field" />
+            <engine:FloatField label="픽셀 사이즈" value="0.4" name="PixelSizeField" binding-path="pixelSize" class="grass-field" />
+        </engine:VisualElement>
+        <engine:Slider label="노이즈 크기" value="42" high-value="0.3" name="RandomScaleSlider" binding-path="randomScale" fill="false" inverted="false" show-input-field="true" low-value="0.1" style="-unity-font-style: bold; width: 291px; -unity-text-align: upper-left; align-self: center; margin-bottom: 15px; margin-top: 0; height: 21px;" />
+        <engine:Button text="무작위 지형 생성" name="EditButton" style="height: 60px; font-size: 15px; -unity-font-style: bold; width: 207px; align-self: center; flex-grow: 0; flex-shrink: 0; margin-top: 5px; margin-bottom: 3px;" />
+        <engine:Button text="지형 삭제" name="DeleteButton" style="height: 60px; font-size: 15px; -unity-font-style: bold; width: 207px; align-self: center; flex-grow: 0; flex-shrink: 0; margin-top: 5px; margin-bottom: 3px;" />
+    </engine:VisualElement>
+</engine:UXML>
