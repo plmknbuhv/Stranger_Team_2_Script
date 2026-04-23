@@ -18,7 +18,7 @@ namespace _01_Work.HS.Core.Map
         public int verticalSize = 10;    // 세로 길이
         
         public float cellSize = 0.4f;     // 블럭 하나당 크기 : 땅 오브젝트 크기에 맞춤
-        public float randomScale = 0.1f;  //
+        public float randomScale = 0.1f;  // 맵 생성 노이즈 조밀도 : 높으면 땅이 촘촘해짐
         #endregion
         
         public Ground fertileGrassPrefab;
@@ -46,8 +46,6 @@ namespace _01_Work.HS.Core.Map
             if (_navMeshSurface == null)
                 _navMeshSurface = GetComponent<NavMeshSurface>();
             _mapGrid.cellSize = new Vector3(cellSize, 0, cellSize);
-            
-            ClearMap();
 
             float seed = Random.Range(0, 1000) * 100f;
             
@@ -59,10 +57,7 @@ namespace _01_Work.HS.Core.Map
                 }
             }
             
-            if (isEdit) 
-                StaticBatchingUtility.Combine(_groundObjects.ToArray(), transform.gameObject);
-            else
-                CombineMesh();
+            CombineMesh();
             
             GameManager.Instance.InitGrounds();
             _navMeshSurface.BuildNavMesh();
