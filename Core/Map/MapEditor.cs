@@ -10,15 +10,15 @@ namespace _01_Work.HS.Core.Map
     public class MapEditor : MonoBehaviour
     {
         #region Map Setting
-        public int fertileGrassProbability = 30;
-        public int grassProbability = 40;
-        public int barrenGrassProbability = 30; // s
+        public int fertileGrassProbability = 30;  // 기름진 땅 확률
+        public int grassProbability = 40;         // 평범한 땅 확률
+        public int barrenGrassProbability = 30;   // 척박한 땅 확률
         
-        public int horizontalSize = 10;
-        public int verticalSize = 10;
+        public int horizontalSize = 10;  // 가로 길이
+        public int verticalSize = 10;    // 세로 길이
         
-        public float cellSize = 0.4f;
-        public float randomScale = 0.1f;
+        public float cellSize = 0.4f;     // 블럭 하나당 크기 : 땅 오브젝트 크기에 맞춤
+        public float randomScale = 0.1f;  //
         #endregion
         
         public Ground fertileGrassPrefab;
@@ -30,8 +30,6 @@ namespace _01_Work.HS.Core.Map
         private NavMeshSurface _navMeshSurface;
         private Grid _mapGrid;
         private MeshFilter _parentMeshFilter;
-        
-        // private MapDataSO _mapData;
 
         private void Awake()
         {
@@ -142,12 +140,6 @@ namespace _01_Work.HS.Core.Map
             
             _groundObjects.Add(newGround.gameObject);
             newGround.Initialize(groundType);
-            
-            // Vector3Int cellPoint = _mapGrid.WorldToCell(newGround.transform.position);
-            // GroundData ground;
-            // ground.groundType = groundType;
-            // _mapData.groundDataList.Add(cellPoint, ground);
-            // EditorUtility.SetDirty(_mapData);
         }
 
         public void ClearMap()
