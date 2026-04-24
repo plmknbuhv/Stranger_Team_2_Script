@@ -79,12 +79,6 @@ namespace _01_Work.HS.Core.GameManagement
             if (stateMachine.CurrentState is not BuildState)
                 ChangeState(GameStateType.Build);
         }
-        
-        public void SetUnit(FriendlyUnit unit)
-        {
-            _controlUnitList.Add(unit);
-            ChangeState(GameStateType.UnitControl);
-        }
 
         public void HealCastle(int healValue) => Castle.Heal(healValue);
         public void SetCastle(Castle castle) => Castle = castle;
