@@ -18,6 +18,8 @@ namespace _01_Work.HS.Building
         public Vector2Int ActualSize { get; private set; }
 
         protected bool _isBuilt;
+        // 이후에 건물 설치에 시간이 소모되는 기능 추가를 염두하고 만듬
+        // 사용 안하는중
 
         public Action OnCanWorkEvent;
         
